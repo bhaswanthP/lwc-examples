@@ -1,0 +1,24 @@
+<template>
+    <div class = "slds-box slds-theme_default header-style">
+        <h1>Simple Calculator</h1>
+        <h1>{message}</h1>
+    </div>
+    <div class = "slds-box slds-theme_shade">
+        <lightning-input label = "First Number" value = {firstNumber} onblur = {handleFirstNumber}></lightning-input>
+        <lightning-input label = "Second Number" value = {secondNumber} onblur = {handleSecondNumber}></lightning-input>
+    </div>
+    <div>
+        Result: <!--{result}-->
+        <template lwc:if = {showBadge}>
+            <lightning-badge class = "slds-theme_error" label = {result}></lightning-badge>
+        </template>
+    </div>
+    <div class = "slds-box slds-theme_default">
+        <lightning-button-group>
+            <lightning-button label = "Add" onclick = {handleAddEvent}></lightning-button>
+            <lightning-button label = "Sub" onclick = {sub}></lightning-button>
+            <lightning-button label = "Mul" onclick = {mul}></lightning-button>
+            <lightning-button label = "Div" onclick = {div}></lightning-button>
+        </lightning-button-group>
+    </div>
+</template>

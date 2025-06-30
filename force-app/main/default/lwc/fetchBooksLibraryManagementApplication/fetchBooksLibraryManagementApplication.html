@@ -1,0 +1,22 @@
+<template>
+    <table class = "slds-table slds-table_bordered slds-table_col-bordered slds-table_striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Author</th>
+                <th>Stock Available</th>
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each = {bookService.data} for:item = "book">
+                <tr key = {book.Id}>
+                    <td>{ book.Book_Title__c }</td>
+                    <td>{ book.Category__c }</td>
+                    <td>{ book.Author__c }</td>
+                    <td>{ book.Stock_Available__c }</td>
+                </tr>
+        </template>
+        </tbody>
+    </table>
+</template>

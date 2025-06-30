@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Opportunities" icon-name="standard:opportunity">
+        <lightning-button-group slot="actions">
+            <lightning-button variant="success" label="Won Deals" onclick={loadWonDeals}></lightning-button>
+            <lightning-button variant="destructive" label="Lost Deals" onclick={loadLostDeals}></lightning-button>
+        </lightning-button-group>
+        <table class="slds-table slds-table_bordered slds-table_col-bordered slds-table_striped">
+            <thead>
+                <tr>
+                    <th>Opportunity Name</th>
+                    <th>Stage Name</th>
+                    <th>Amount</th>
+                    <th>Close Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template if:true={oppList}>
+                    <template for:each={oppList} for:item="opp">
+                        <tr key={opp.RecordId}>
+                            <td>{opp.OpportunityName}</td>
+                            <td>{opp.Stage}</td>
+                            <td>{opp.Amount}</td>
+                            <td>{opp.CloseDate}</td>
+                        </tr>
+                    </template>
+                </template>
+            </tbody>
+        </table>
+    </lightning-card>
+</template>

@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="LDT Demo">
+        <template lwc:if = {showDelete}>
+            <lightning-button-group slot="actions">
+                <lightning-button variant="Destructive" label="Delete" onclick={handleClick}></lightning-button>
+            </lightning-button-group>
+        </template>
+        <lightning-datatable key-field="id" columns={columnList} data={opportunityService.data} max-row-selection="1"
+            onrowselection={handleRowSelection}>
+
+        </lightning-datatable>
+    </lightning-card>
+</template>

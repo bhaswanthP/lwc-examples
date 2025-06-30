@@ -1,0 +1,25 @@
+<template>
+    <div class="slds-box slds-theme_default">
+        <c-account-search-input onsearch={handleSearch}></c-account-search-input>
+    </div>
+    <template lwc:if = {accList}>
+        <table class="slds-table slds-table_bordered slds-table_col-bordered slds-table_striped">
+            <thead>
+                <tr>
+                    <th>Account Name</th>
+                    <th>Type</th>
+                    <th>Industry</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={accList} for:item="acc">
+                    <tr key={acc.Id} data-id = {acc.Id} onclick = {handleClick}>
+                        <td>{acc.Name}</td>
+                        <td>{acc.Type}</td>
+                        <td>{acc.Industry}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </template>
+</template>

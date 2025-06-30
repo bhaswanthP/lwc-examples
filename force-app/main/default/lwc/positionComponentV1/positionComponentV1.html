@@ -1,0 +1,18 @@
+<template>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each = {positionService.data} for:item = "pos">
+                <tr key = {pos.Id}>
+                    <td>{ pos.Title }</td>
+                    <td>{ pos.Status }</td>
+                </tr>
+        </template>
+        </tbody>
+    </table>
+</template>

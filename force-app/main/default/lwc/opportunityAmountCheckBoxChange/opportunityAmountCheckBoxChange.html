@@ -1,0 +1,24 @@
+<template>
+    <table class = "slds-table slds-table_bordered slds-table_col-bordered slds-table_striped">
+        <thead>
+            <tr>
+                <th>Opportunity Name</th>
+                <th>Account Id</th>
+                <th>Amount</th>
+                <th>Stage Name</th>
+                <th>Close Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each = {opportunityService.data} for:item = "opportunity">
+                <tr key = {opportunity.Id}>
+                    <td>{ opportunity.Name }</td>
+                    <td>{ opportunity.AccountId }</td>
+                    <td>{ opportunity.Amount }</td>
+                    <td>{ opportunity.StageName }</td>
+                    <td>{opportunity.CloseDate }</td>
+                </tr>
+        </template>
+        </tbody>
+    </table>
+</template>

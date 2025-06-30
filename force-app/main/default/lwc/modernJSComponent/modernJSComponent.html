@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title = "CallBack vs Arrow">
+        <lightning-button-group slot = "actions">
+            <lightning-button onclick = {updateDateTimeUsingCalling} label = "Refresh" icon-name = "utility:refresh"></lightning-button>
+            <lightning-button onclick = {updateDateTimeUsingLocalVariable} label = "Refresh using Local Variable" icon-name = "utility:refresh"></lightning-button>
+            <lightning-button onclick = {updateDateTimeUsingBind} label = "Refresh using Bind" icon-name = "utility:refresh"></lightning-button>
+            <lightning-button onclick = {updateDateTimeUsingArrow} label = "Refresh using Arrow" icon-name = "utility:refresh"></lightning-button>
+
+        </lightning-button-group>
+        {todayDateTime}
+    </lightning-card>
+</template>

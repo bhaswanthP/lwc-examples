@@ -1,0 +1,49 @@
+<template>
+    <lightning-card title="add new training">
+        <div class="slds-p-around_medium">
+            <lightning-input
+                name="trainingName"
+                label="Training Name"
+                value={trainingName}
+                placeholder="Enter Training Name"
+                onchange={handleTrainingName}>
+            </lightning-input>
+
+            <lightning-input
+                name="trainingId"
+                label="Training Id"
+                value={trainingId}
+                placeholder="Enter Training Id"
+                onchange={handleTrainingId}>
+            </lightning-input>
+
+            <lightning-input
+                name="startDate"
+                label="Start Date"
+                type="date"
+                value={startDate}
+                placeholder="Enter Start Date"
+                onchange={handleStartDate}>
+            </lightning-input>
+            <lightning-input
+                name="POC"
+                label="POC"
+                value={POC}
+                placeholder="Enter POC"
+                onchange={handlePOC}>
+            </lightning-input>
+            <lightning-input
+                name="trainerName"
+                label="Trainer Name"
+                value={trainerName}
+                placeholder="Enter Trainer Name"
+                onchange={handleTrainerName}>
+            </lightning-input>
+            <lightning-button
+                variant="brand"
+                label="Add Training"
+                onclick={handleAddTraining}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

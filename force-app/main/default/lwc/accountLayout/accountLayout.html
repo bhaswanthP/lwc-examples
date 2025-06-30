@@ -1,0 +1,23 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item size="2">
+            <c-vertical-navigation-demo onnavigation={handleNavigation}></c-vertical-navigation-demo>
+        </lightning-layout-item>
+        <template lwc:if={isSearch}>
+            <lightning-layout-item size="5">
+                <c-account-search-result></c-account-search-result>
+            </lightning-layout-item>
+            <lightning-layout-item size="5">
+                <c-account-detail></c-account-detail>
+            </lightning-layout-item>
+        </template>
+        <template lwc:if={isCalc}>
+            <lightning-layout-item size="10">
+                <c-simple-calculator></c-simple-calculator>
+            </lightning-layout-item>
+        </template>
+        <template lwc:if={isDeal}>
+            <c-opportunity-component-v1></c-opportunity-component-v1>
+        </template>
+    </lightning-layout>
+</template>
