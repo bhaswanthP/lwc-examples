@@ -1,0 +1,25 @@
+<aura:component controller="InputCountryAura"
+                implements="flexipage:availableForRecordHome,force:hasRecordId"
+                access="global">
+    <aura:attribute name="countries" type="List" />
+    <aura:attribute name="selectedCountry" type="String" />
+    <aura:attribute name="errorMessage" type="String" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+
+    <lightning:select label="Select Country"
+                      value="{!v.selectedCountry}"
+                      onchange="{!c.handleChange}">
+        <aura:iteration items="{!v.countries}" var="country">
+            <option value="{!country}">{!country}</option>
+        </aura:iteration>
+    </lightning:select>
+
+    <aura:if isTrue="{!v.errorMessage != ''}">
+        <p class="slds-text-color_error">{!v.errorMessage}</p>
+    </aura:if>
+
+    <lightning:button label="Save"
+                      onclick="{!c.handleSave}"
+                      disabled="{!v.selectedCountry == '' || v.errorMessage != ''}" />
+</aura:component>

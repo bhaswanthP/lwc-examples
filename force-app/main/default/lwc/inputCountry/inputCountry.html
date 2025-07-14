@@ -1,0 +1,14 @@
+<template>
+  <lightning-combobox
+    label="Select Country"
+    value={selectedCountry}
+    options={countryOptions}
+    onchange={handleChange}>
+  </lightning-combobox>
+
+  <template if:true={showError}>
+    <div class="slds-text-color_error">Selected country is not supported.</div>
+  </template>
+
+  <lightning-button label="Save" onclick={handleSave} disabled={isSaveDisabled}></lightning-button>
+</template>
